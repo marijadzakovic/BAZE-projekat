@@ -1,0 +1,47 @@
+﻿@model Zara.Repository.Models.DB.EmployeeModel
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+
+<div>
+    <h1>Insert new employee</h1>
+
+    @using (@Html.BeginForm("Store", "Employee", FormMethod.Post))
+    {
+        if(@Model != null)
+                {
+                    @Html.HiddenFor(m => m.ZaposleniID)
+                }
+
+        <div class="form-group">
+            <label>Ime</label>
+            @Html.TextAreaFor(m => m.Ime, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            <label>Telefon</label>
+            @Html.TextAreaFor(m => m.Telefon, new { @class = "form-control" })
+        </div>
+
+
+        <div class="form-group">
+            <label>Sektor</label>
+            @Html.DropDownListFor(m => m.NazivSektora, new SelectList(ViewBag.Sectors, "Naziv", "Naziv"),
+            new { @class = "form-control" })
+        </div>
+        <br />
+
+        <button type="submit" class="btn btn-primary" > Sacuvaj</button>
+
+    }
+</div>
+<script>
+    function myFunction() {
+        alert("Trebali bi ste da unesete novi ugovor za ovog zaposlenog!");
+    }
+</script>
+@section footer{
+    <footer>
+        &copy; Zara 2022 - Employee page
+    </footer>
+    }

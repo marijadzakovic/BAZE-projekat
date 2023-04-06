@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+
+<div>
+    <h1>Searched Contracts view</h1>
+    <br />
+    
+    <table class="table table-striped">
+        <tr>
+            <th>Sifra</th>
+            <th>Zaposleni</th>
+            <th>RadnoMjesto</th>
+            <th>Plata</th>
+            <th>DatumZaposlenja</th>
+            <th>Broj Radnih Sati U Nedelji</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var item in ViewBag.Contracts)
+        {
+            <tr>
+                <td>@item.Sifra</td>
+                <td>@item.ZaposleniID</td>
+                <td>@item.RadnoMjesto</td>
+                <td>@item.Plata</td>
+                <td>@item.DatumZaposlenja</td>
+                <td>@item.BrRadnihSatiUNedelji</td>
+                <td>
+                    <a class="btn btn-light" href="@Url.Action("Edit", "Contract", new { employeeID = item.ZaposleniID})">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-dark" href="@Url.Action("Delete", "Contract", new { employeeID = item.ZaposleniID})">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+@section footer{
+    <footer>
+        &copy; Zara 2022 - Searched Contracts
+    </footer>
+}

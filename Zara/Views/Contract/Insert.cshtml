@@ -1,0 +1,49 @@
+﻿@model Zara.Repository.Models.DB.ContractModel
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+<div>
+<h1>Insert new contract </h1>
+@using (@Html.BeginForm("Store", "Contract", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Sifra</label>
+        @Html.TextAreaFor(m => m.Sifra, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>ZaposleniID</label>
+        @Html.DropDownListFor(m => m.ZaposleniID, new SelectList(ViewBag.EmployeesWithoutContract, "ZaposleniID", "ZaposleniID"),
+         new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Radno mjesto</label>
+        @Html.TextAreaFor(m => m.RadnoMjesto, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        <label>Plata</label>
+        @Html.TextAreaFor(m => m.Plata, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        <label>Datum Zaposlenja</label>
+        @Html.TextBoxFor(m => m.DatumZaposlenja, new { type = "date" })
+
+    </div>
+    <div class="form-group">
+        <label>Broj Radnih Sati U Nedelji</label>
+        @Html.TextAreaFor(m => m.BrRadnihSatiUNedelji, new { @class = "form-control" })
+
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary"> Sacuvaj</button>
+
+}
+
+</div>
+@section footer{
+    <footer>
+        &copy; Zara 2022 - Insert Contract page
+    </footer>
+}

@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+
+<div>
+    
+    <h1>Employee Index Page</h1>
+
+    <div>
+        <a href="/Employee/Create" class="btn btn-primary">Add new Employee</a>
+        <br />
+        <table class="table table-striped">
+            <tr>
+                <th>ZaposleniID</th>
+                <th>Ime zaposlenog</th>
+                <th>Telefon</th>
+                <th>Naziv sektora</th>
+                <th>Edit</th>
+                <th>Details</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var item in ViewBag.Employees)
+            {
+                <tr>
+                    <td>@item.ZaposleniID</td>
+                    <td>@item.Ime</td>
+                    <td>@item.Telefon</td>
+                    <td>@item.NazivSektora</td>
+                    <td>
+                        <a class="btn btn-primary" href="@Url.Action("Edit", "Employee", new { employeeID = item.ZaposleniID})">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" href="@Url.Action("ViewEmployeeDetails", "Employee", new { employeeID = item.ZaposleniID})">Details</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="@Url.Action("Delete", "Employee", new { employeeID = item.ZaposleniID})">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <p>Kliknite da unesete ugovor za zaposlene koji nemaju ugovor</p>
+        <a class="btn btn-danger" href="@Url.Action("Insert", "Contract")">Click</a>
+        <br /><br />
+
+        <button class="btn btn-primary" onclick="generateReport()">Generate Report</button>
+
+        <table class="table table-striped" id="reports-table" style="visibility:hidden">
+            <thead>
+                <tr>
+                    <th>ZaposleniID</th>
+                    <th>Ime zaposlenog</th>
+                    <th>Telefon</th>
+                    <th>Naziv sektora</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.Employees)
+                {
+                    <tr>
+                        <td>@item.ZaposleniID</td>
+                        <td>@item.Ime</td>
+                        <td>@item.Telefon</td>
+                        <td>@item.NazivSektora</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script src="~/Scripts/jspdf.umd.js"></script>
+<script src="~/Scripts/jspdf.plugin.autotable.js"></script>
+
+
+<script>
+    function generateReport() {
+        let doc = new jspdf.jsPDF();
+        doc.autoTable({ html : '#reports-table'});
+        doc.save('Employees.pdf');
+    }
+</script>
+@section footer{
+    <footer>
+        &copy; Zara 2022 - Employee Index page
+    </footer>
+}

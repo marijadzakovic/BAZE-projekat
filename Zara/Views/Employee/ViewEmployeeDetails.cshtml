@@ -1,0 +1,69 @@
+﻿@model Zara.Repository.Models.DB.EmployeeFullDetailsModel
+
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+
+<div class="list-group mx-0 w-auto">
+    <h1>Employee Details</h1>
+    <label class="list-group-item d-flex gap-2">
+        <span>
+            ID Zaposlenog
+            <small class="d-block text-muted">@Model.ZaposleniID</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <span>
+            Ime Zaposlenog
+            <small class="d-block text-muted">@Model.Ime</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <span>
+            Telefon Zaposlenog
+            <small class="d-block text-muted">@Model.Telefon</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <span>
+            Naziv Sektora na kojem radi zaposleni
+            <small class="d-block text-muted">@Model.NazivSektora</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <span>
+            Sifra Ugovora Zaposlenog
+            <small class="d-block text-muted">@Model.Sifra</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <span>
+            Radno Mjesto Zaposlenog
+            <small class="d-block text-muted">@Model.RadnoMjesto</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <span>
+            Plata Zaposlenog
+            <small class="d-block text-muted">@Model.Plata</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <span>
+           Datum Zaposlenja Zaposlenog
+            <small class="d-block text-muted">@Model.DatumZaposlenja</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <span>
+            Broj Radnih Sati U Nedelji
+            <small class="d-block text-muted">@Model.BrRadnihSatiUNedelji</small>
+        </span>
+    </label>
+</div>
+
+@section footer{
+    <footer>
+        &copy; Zara 2022 - Employee details page
+    </footer>
+}

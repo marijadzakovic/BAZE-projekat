@@ -1,0 +1,102 @@
+﻿
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+
+<div>
+
+    <div>
+        <h1>ZARA - ALL ITEMS</h1>
+
+        
+        <br />
+        <table class="table table-striped">
+            <tr>
+                <th>Sifra</th>
+                <th>Naziv</th>
+                <th>Cijena</th>
+                <th>Velicina</th>
+                <th>Sektor</th>
+                <th>Boja</th>
+                <th>Edit</th>
+                <th>Details</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var item in ViewBag.Items)
+            {
+                <tr>
+                    <td>@item.Sifra</td>
+                    <td>@item.Naziv</td>
+                    <td>@item.Cijena</td>
+                    <td>@item.OznakaVelicine</td>
+                    <td>@item.NazivSektora</td>
+                    <td>@item.Boja</td>
+                    <td>
+                        <a class="btn btn-primary" href="@Url.Action("Edit", "Item", new { itemID = item.Id})">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" href="@Url.Action("GetItemFullDetails", "Item", new { itemID = item.Id })">Details</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="@Url.Action("Delete", "Item", new { itemID = item.Id})">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <a href="/Item/Create" class="btn btn-outline-primary">Dodaj artikal</a>
+    <br> </br>
+
+    <button class="btn btn-primary" onclick="generateReport()">Generate Report</button>
+
+    <table class="table table-striped" id="reports-table" style="visibility:hidden">
+        <thead>
+            <tr>
+                <th>Sifra</th>
+                <th>Naziv</th>
+                <th>Cijena</th>
+                <th>Velicina</th>
+                <th>Sektor</th>
+                <th>Boja</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Items)
+            {
+                <tr>
+                    <td>@item.Sifra</td>
+                    <td>@item.Naziv</td>
+                    <td>@item.Cijena</td>
+                    <td>@item.OznakaVelicine</td>
+                    <td>@item.NazivSektora</td>
+                    <td>@item.Boja</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script src="~/Scripts/jspdf.umd.js"></script>
+<script src="~/Scripts/jspdf.plugin.autotable.js"></script>
+
+
+<script>
+    function generateReport() {
+        let doc = new jspdf.jsPDF();
+        doc.autoTable({ html: '#reports-table' });
+        doc.save('Items.pdf');
+    }
+</script>
+
+@section footer{
+    <footer>
+        &copy; Zara 2022 - Index page
+    </footer>
+}

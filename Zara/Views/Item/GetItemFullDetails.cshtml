@@ -1,0 +1,56 @@
+﻿@model Zara.Repository.Models.DB.ItemModel
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+
+<div>
+    <h1>Item details</h1>
+    <p>@Model.Id</p>
+    <p>@Model.Sifra</p>
+    <p>@Model.Naziv</p>
+    <p>@Model.OznakaVelicine</p>
+    <p>Dostupne Velicine</p>
+    <ul>
+    @foreach(var size in ViewBag.Sizes)
+            {
+        <li>@size.OznakaVelicine</li>
+            }
+
+    </ul>
+    <p>@Model.NazivSektora</p>
+    <p>@Model.Opis</p>
+    <p>@Model.Cijena</p>
+    <p>@Model.Boja</p>
+    <p>Dostupne boje</p>
+    @foreach(string boja in ViewBag.Colors)
+            {
+        <li>@boja</li>
+            }
+</div>
+<div class="dropdown-menu position-static d-flex align-items-stretch p-3 rounded-3 shadow-lg w-600px">
+    <nav class="d-grid gap-2 col-8">
+        <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start">
+            <svg class="bi" width="32" height="32"><use xlink:href="#image-fill"></use></svg>
+            <div>
+                <strong class="d-block">Features</strong>
+                <small>Take a tour through the product</small>
+            </div>
+        </a>
+        <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start">
+            <svg class="bi" width="32" height="32"><use xlink:href="#question-circle"></use></svg>
+            <div>
+                <strong class="d-block">Support</strong>
+                <small>Get help from our support crew</small>
+            </div>
+        </a>
+    </nav>
+    <div class="col-4">
+        ...
+    </div>
+</div>
+
+@section footer{
+    <footer>
+        &copy; Zara 2022 - Item page
+    </footer>
+}

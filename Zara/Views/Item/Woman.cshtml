@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+
+<div>
+    <h1>ZARA -WOMAN </h1>
+    <div>
+
+        <div>
+            <label>Pretrazi zenske artikle: </label>
+            @using (Html.BeginForm("Search1", "Item", FormMethod.Get))
+            {
+                <table>
+                    <tr>
+                        <td>
+                            <span><b>Search by: </b></span>
+                            @Html.RadioButton("searchBy", "Naziv", true)
+                            <text>Naziv Artikla</text>
+                            @Html.RadioButton("searchBy", "Cijena")
+                            <text>Cijena Artikla</text>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBox("searchValue", null, new { Class = "form-control" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Search" class="btn btn-success" style="margin-top:10px" />
+                        </td>
+                    </tr>
+                </table>
+            }
+           
+        </div>
+        <table class="table table-striped">
+            <tr>
+                <th>Sifra</th>
+                <th>Naziv</th>
+                <th>Cijena</th>
+                <th>Velicina</th>
+                <th>Sektor</th>
+                <th>Boja</th>
+                <th>Edit</th>
+                <th>Details</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var item in ViewBag.Items)
+            {
+                <tr>
+                    <td>@item.Sifra</td>
+                    <td>@item.Naziv</td>
+                    <td>@item.Cijena</td>
+                    <td>@item.OznakaVelicine</td>
+                    <td>@item.NazivSektora</td>
+                    <td>@item.Boja</td>
+                    <td>
+                        <a class="btn btn-primary" href="@Url.Action("Edit", "Item", new { itemID = item.Id})">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" href="@Url.Action("GetItemFullDetails", "Item", new { itemID = item.Id})">Details</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="@Url.Action("Delete", "Item", new { itemID = item.Id})">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <a href="/Item/Create" class="btn btn-outline-primary">Dodaj artikal</a>
+</div>
+@section footer{
+    <footer>
+        &copy; Zara 2022 -Woman Items page
+    </footer>
+}
+

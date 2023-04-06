@@ -1,0 +1,79 @@
+﻿@model Zara.Repository.Models.DB.ItemModel
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+<div>
+    <h1>Item Details</h1>
+<div class="dropdown-menu d-flex align-items-stretch p-5 rounded-3 shadow-lg col-md-6">
+    <nav class="d-grid gap-2 ">
+        <div>
+            <p class="d-block"><strong>ID Artikla:  </strong> <small>@Model.Id</small> </p>
+        </div>
+
+        <div>
+            <p class="d-block"><strong>Sifra Artikla:  </strong> <small>@Model.Sifra</small> </p>
+        </div>
+
+        <div>
+            <p class="d-block"><strong>Naziv Artikla:  </strong> <small>@Model.Naziv</small> </p>
+        </div>
+
+        <div>
+            <p class="d-block"><strong>Velicina Artikla:  </strong> <small>@Model.OznakaVelicine</small> </p>
+        </div>
+        <div>
+            <strong>Dostupne velicine: </strong>
+            <ul class="list-unstyled mb-0">
+                @foreach (var size in ViewBag.Sizes)
+                {
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                            <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                            @size.OznakaVelicine
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div>
+            <p class="d-block"><strong>Sektor Artikla:  </strong> <small>@Model.NazivSektora</small> </p>
+
+        </div>
+
+        <div>
+            <p class="d-block"><strong>Cijena Artikla:  </strong> <small>@Model.Cijena</small> </p>
+
+        </div>
+
+        <div>
+            <p class="d-block"><strong>Boja Artikla:  </strong> <small>@Model.Boja</small> </p>
+
+        </div>
+        <div>
+            <strong>Dostupne boje: </strong>
+            <ul class="list-unstyled mb-0">
+                @foreach (var boja in ViewBag.Colors)
+                {
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                            <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                            @boja
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div>
+            <p class="d-block"><strong>Opis Artikla:  </strong> <small>@Model.Opis</small> </p>
+        </div>
+    </nav>
+    <div class="col-4">
+        
+    </div>
+</div>
+</div>
+@section footer{
+    <footer>
+        &copy; Zara 2022 - Item details page
+    </footer>
+}

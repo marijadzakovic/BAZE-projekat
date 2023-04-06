@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = "~/Views/shared/_MainLayout.cshtml";
+}
+
+
+<body class="text-center">
+    <main class="form-signin w-25 m-auto">
+
+        <h1>Please Log In</h1>
+        <div class="form-floating">
+
+            <input type="text" id="username" class="form-control" />
+        </div>
+        <div class="form-floating">
+
+            <input type="password" class="form-control" id="password" />
+        </div>
+
+        <button class="w-100 btn btn-primary" id="btn-login">Loguj se</button>
+
+
+    </main>
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/custom/user-management/Login.js"></script>
+</body>
+
+
+@section footer{
+    <footer>
+        &copy; Zara 2022 - Login page
+    </footer>
+}

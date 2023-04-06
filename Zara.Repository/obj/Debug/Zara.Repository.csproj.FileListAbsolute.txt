@@ -1,0 +1,12 @@
+C:\Users\Admin\Desktop\NAPREDNE_BAZE\Zara\Zara.Repository\bin\Debug\Zara.Repository.dll
+C:\Users\Admin\Desktop\NAPREDNE_BAZE\Zara\Zara.Repository\bin\Debug\Zara.Repository.pdb
+C:\Users\Admin\Desktop\NAPREDNE_BAZE\Zara\Zara.Repository\obj\Debug\Zara.Repository.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\NAPREDNE_BAZE\Zara\Zara.Repository\obj\Debug\Zara.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\NAPREDNE_BAZE\Zara\Zara.Repository\obj\Debug\Zara.Repository.dll
+C:\Users\Admin\Desktop\NAPREDNE_BAZE\Zara\Zara.Repository\obj\Debug\Zara.Repository.pdb
+C:\Users\Admin\Desktop\treca godina\NAPREDNE_BAZE\Zara\Zara.Repository\bin\Debug\Zara.Repository.dll
+C:\Users\Admin\Desktop\treca godina\NAPREDNE_BAZE\Zara\Zara.Repository\bin\Debug\Zara.Repository.pdb
+C:\Users\Admin\Desktop\treca godina\NAPREDNE_BAZE\Zara\Zara.Repository\obj\Debug\Zara.Repository.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\treca godina\NAPREDNE_BAZE\Zara\Zara.Repository\obj\Debug\Zara.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\treca godina\NAPREDNE_BAZE\Zara\Zara.Repository\obj\Debug\Zara.Repository.dll
+C:\Users\Admin\Desktop\treca godina\NAPREDNE_BAZE\Zara\Zara.Repository\obj\Debug\Zara.Repository.pdb

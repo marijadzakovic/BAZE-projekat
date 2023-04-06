@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="sidebars.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    <title>ZARA</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="flex-shrink-0 p-3 bg-white col-md-2">
+                <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                    <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                    <span class="fs-5 fw-semibold">ZARA</span>
+                </a>
+                <ul class="list-unstyled ps-0">
+                    <li class="mb-1">
+                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                            Home
+                        </button>
+                        <div class="collapse show" id="home-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="/Item/Index" class="link-dark d-inline-flex text-decoration-none rounded">ALL ITEMS</a></li>
+                                <li><a href="/Item/Woman" class="link-dark d-inline-flex text-decoration-none rounded">WOMAN</a></li>
+                                <li><a href="/Item/Man" class="link-dark d-inline-flex text-decoration-none rounded">MAN</a></li>
+                                <li><a href="/Item/Kids" class="link-dark d-inline-flex text-decoration-none rounded">KIDS</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+                            Employees
+                        </button>
+                        <div class="collapse show" id="dashboard-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="/Employee/Index" class="link-dark d-inline-flex text-decoration-none rounded">All employees</a></li>
+                               
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+                            Contracts
+                        </button>
+                        <div class="collapse show" id="dashboard-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="/Contract/Index" class="link-dark d-inline-flex text-decoration-none rounded">All contracts</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+               
+                  
+                    <li id="list-item-login"><a href="/UserManagement/Login" class="link-dark d-inline-flex text-decoration-none rounded">Login</a></li>
+                    <li><a href="/Home/Contact" class="link-dark d-inline-flex text-decoration-none rounded">Contact</a></li>
+                    <li id="list-item-logout"><a href="/UserManagement/Logout" class="link-dark d-inline-flex text-decoration-none rounded">Logout</a></li>
+                    <li></li>
+                </ul>
+            </div>
+
+
+            <main class="col-md-10 ms-sm-auto log-lg-10 px-md-4">
+                @RenderBody()
+
+                @RenderSection("footer")
+            </main>
+        </div>
+    </div>
+    <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="sidebars.js"></script>
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/custom/shared/main-layout.js"></script>
+
+</body>
+</html>
